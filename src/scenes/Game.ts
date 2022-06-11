@@ -27,10 +27,10 @@ export default class Demo extends Phaser.Scene {
       message:'He couldn\'t resist you bro!\n\nGet a few more SHANDYS because this next HOTTIE looks fierce!',
       hottie: 'hottie-3',
       hottieIdleAnim: 'hottie-3-idle',
-      name: 'Bernadette'
+      name: 'Bernie'
     },
     {
-      message:'She was definitely knocked out by those spectacular abs, bro!',
+      message:'She was definitely knocked out by those spectacular abs, bro! Grab yourself a few SHANDYS.',
       hottie: 'hottie-4',
       hottieIdleAnim: 'hottie-4-idle',
       name: 'Gigi'
@@ -314,7 +314,7 @@ export default class Demo extends Phaser.Scene {
     const _this = this
     for (const shot of this.shots) {
       //shot.y--
-      if(this.levelClear==false&&shot.y<255 && shot.y > 100 && Math.abs(shot.x-_this.hottie.x)<15){
+      if(!this.won&&this.levelClear==false&&shot.y<255 && shot.y > 100 && Math.abs(shot.x-_this.hottie.x)<15){
         shot.destroy()
         this.levelClear = true
         break
@@ -347,6 +347,10 @@ export default class Demo extends Phaser.Scene {
         font: "28px Consolas",
         color: '#000000',
       })
+      this.hottieText = this.add.text(550, 550, '', {
+        font: "28px Consolas",
+        color: '#000000',
+      })
   
 
     }
@@ -370,11 +374,13 @@ export default class Demo extends Phaser.Scene {
     this.level++    
     if(this.level>=this.levels.length){
       //this.initGame()
-      this.showMessage('YOU DID IT BRO! Every HOTTIE is into that scrumptious body!\n\nLet\s Celebrate with a few more SHANDYS!')
+      this.showMessage('YOU DID IT BRO! You win! Every HOTTIE is into that scrumptious body!\n\nThis day has been so perfect, bro. I could sit here and drink SHANDYS forever!')
       this.won = true;
+      this.hottieText.destroy()
     }else{
       this.confidence=0
       this.confidenceText.setText('Confidence: '+this.confidence)
+      this.hottieText.setText('Hottie: '+this.levels[this.level].name)
       //load levels
       this.showMessage(this.levels[this.level].message)
       
