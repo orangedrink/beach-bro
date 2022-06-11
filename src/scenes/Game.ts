@@ -9,7 +9,7 @@ export default class Demo extends Phaser.Scene {
   }
   levels=[
     {
-      message:'Bro, It\'s finally nice outside! You\'ve been working so hard on that great body bro and it\'s time to take it to the NUDE BEACH!! We\'re goint to have so much fun. We\'re sure to scope some HOTTIES and sip some SHANDYs, bro. What a great day! \n\nI love you, Bro.'
+      message:'Bro, It\'s finally nice outside! You\'ve been working so hard on that great body bro and it\'s time to take it to the NUDE BEACH!! We\'re going to have so much fun. We\'re sure to scope some HOTTIES and sip some SHANDYs, bro. What a great day! \n\nI love you, Bro.'
     },
     {
       message:'These docks are the best place to find HOTTIES, bro. Look at her over there! \n\n Use the left and right arrow keys to get those SHANDYS, Then when you have enough confidence you can hold space to shoot your shot, bro!',
