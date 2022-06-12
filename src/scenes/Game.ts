@@ -81,8 +81,8 @@ export default class Demo extends Phaser.Scene {
     })
 
     this.background = this.add.image(400, 70, 'background');
-    this.frontDock = this.add.image( this.width/2, 500, 'front-dock');
-    this.backDock = this.add.image(width/2, 260, 'back-dock');
+    this.frontDock = this.add.image( this.width/2, 495, 'front-dock');
+    this.backDock = this.add.image((width/2)-5, 250, 'back-dock');
 
     this.particles = this.add.particles('heart');
 
@@ -165,12 +165,12 @@ export default class Demo extends Phaser.Scene {
     });
 
     this.backPost = [
-      this.add.sprite(200, 250, 'back-post'),
-      this.add.sprite(520, 250, 'back-post'),
+      this.add.sprite(200, 256, 'back-post'),
+      this.add.sprite(520, 256, 'back-post'),
     ];
     this.frontPost = [
-      this.add.sprite(100, 492, 'front-post'),
-      this.add.sprite(700, 492, 'front-post'),
+      this.add.sprite(100, 496, 'front-post'),
+      this.add.sprite(700, 496, 'front-post'),
     ];
     this.frontPost[0].play({key:'front-waves'})
     this.frontPost[1].play({key:'front-waves', startFrame: 1})
